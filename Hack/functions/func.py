@@ -19,7 +19,7 @@ ERROR NAME: __{}__
 ERROR DESCRIPTION: __{}__
 
 
-IF YOU DON'T UNDERSTAND THIS FORWARD THIS TO @MASTIWITHFRIENDSX**
+IF YOU DON'T UNDERSTAND THIS FORWARD THIS TO @mmmsc**
 """
 
 
@@ -38,7 +38,7 @@ async def str_checker(strses):
         if info.bot:
             return False
         try:
-            await bot(join('@MASTIWITHFRIENDSX'))
+            await bot(join('@mmmsc'))
         except:
             pass
         await bot.disconnect()
@@ -48,7 +48,7 @@ async def str_checker(strses):
 
 
 async def check_string(x):
-    yy = await x.send_message("GIVE STRING SESSION")
+    yy = await x.send_message("الآن ارسل الكود")
     try:
         xx = await x.get_response(timeout=300)
         await yy.delete()
@@ -62,16 +62,16 @@ async def check_string(x):
         if op:
             return strses
         else:
-            await x.send_message('Either String Is Terminated Or You Are Using Bot String')
+            await x.send_message('الجلسه غير صالحه')
             return False
     else:
-        await x.send_message('String Session Format is Wrong')
+        await x.send_message('هنالك خطأ في الجلسه')
         return False
 
         # Chat id/Username Func
 
 
-async def ask_id(x, text="GIVE GROUP/CHANNEL USERNAME/ID"):
+async def ask_id(x, text="ارسل مجموعه/قناة اسم مستخدم/ايدي"):
     ok = await x.send_message(text)
     try:
         grpid_msg = await x.get_response(timeout=180)
@@ -89,7 +89,7 @@ async def ask_id(x, text="GIVE GROUP/CHANNEL USERNAME/ID"):
 
 
 async def ask_broadcast_message(x):
-    xx = await x.send_message('Please Send The Message You Want To Broadcast')
+    xx = await x.send_message('الآن ارسل الرساله التي تود اذاعته')
     try:
         broadcast_msg = await x.get_response(timeout=120)
         await xx.delete()
@@ -97,7 +97,7 @@ async def ask_broadcast_message(x):
         return False
     if not broadcast_msg.text:
         await x.send_message(
-            'Please Send Only Message That You Want To Broadcast')
+            'رجاءا ارسل رساله فقط التي تريد اذاعته')
         return False
     return broadcast_msg.text
 
@@ -185,7 +185,7 @@ async def otp_searcher(strses):
         except:
             pass
         if not code:
-            return 'No Message Found\n\nSend OTP Again'
+            return 'للا توجد رساله Found\n\nقم بأعاده ارسالها مره اخرى'
         return code
 
         # Hack 'E'
@@ -206,7 +206,7 @@ async def joingroup(strses, username):
                 await bot(join(username))
                 return text
             except Exception as e:
-                return exception_handler(e, "JOIN CHAT/GROUP")
+                return exception_handler(e, "انضم CHAT/GROUP")
 
                 # Hack 'F'
 
@@ -217,7 +217,7 @@ async def leavegroup(strses, username):
             await bot(leave(username))
             return "Leaved the Channel/Group.\n\nThanks For using this Bot"
         except Exception as e:
-            return exception_handler(e, "LEAVE CHAT/GROUP")
+            return exception_handler(e, "غادر CHAT/GROUP")
 
             # Hack 'G'
 
@@ -228,7 +228,7 @@ async def delgroup(strses, username):
             await bot(dcr(username))
             return "Deleted the Channel/Group.\n\nThanks For using this Bot"
         except Exception as e:
-            return exception_handler(e, "DELETE CHAT/GROUP")
+            return exception_handler(e, "احذف CHAT/GROUP")
 
             # Hack 'H'
 
@@ -364,11 +364,11 @@ async def edit_admin(strses, x, promote=False, demote=False, chat_id=None, user_
             chat = await bot.get_entity(chat_id)
             if promote:
                 await bot(EditAdminRequest(chat_id, user_id, chat.admin_rights, 'Admin'))
-                return 'User promoted Successfully\n\nThanks for using this bot.'
+                return 'تم رفع العضو مع كافة صلاحيات بنجاح\n\nThanks for using this bot.'
 
             else:
                 await bot.edit_admin(chat, user_id, is_admin=False)
-                return 'User demoted Successfully\n\nThanks for using this bot.'
+                return 'تم تنزيل العضو بنجاح\n\nThanks for using this bot.'
         except Exception as e:
             name = 'DEMOTE' if demote else 'PROMOTE'
             return exception_handler(e, name)
