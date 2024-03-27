@@ -1,7 +1,4 @@
 #sos
-from Hack import Client, filters
-from Hack.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
-from Hack.errors import ChatAdminRequired, UserNotParticipant, ChatWriteForbidden
 from Hack import app
 
 @app.on_message(filters.incoming & filters.private, group=-1)
